@@ -1,0 +1,15 @@
+body {
+  background-image: url("../assets/star-wars-backgrounds-25.jpg");
+  background-size: cover;
+}
+
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 25vh;
+}
+
+.home__logo {
+  height: 20vh;
+}
