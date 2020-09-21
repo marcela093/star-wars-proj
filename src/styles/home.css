@@ -1,15 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap");
+
 body {
   background-image: url("../assets/star-wars-backgrounds-25.jpg");
   background-size: cover;
+  color: white;
 }
 
 .home {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 25vh;
+  height: 28vh;
 }
 
 .home__logo {
   height: 20vh;
+}
+
+.home__nav {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+li > a {
+  font-family: "Montserrat Alternates", sans-serif;
+  color: #e6cc7f;
+  list-style: none;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+a:hover {
+  cursor: pointer;
+  border-bottom: 1px solid #e6cc7f;
 }
