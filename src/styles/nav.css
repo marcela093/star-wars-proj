@@ -1,0 +1,21 @@
+.nav__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 20vh;
+}
+
+.nav__logo {
+  height: 10vh;
+}
+
+.nav__content {
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+  width: 50%;
+}
+
+.nav__logo-link:hover {
+  border: none;
+}

@@ -8,10 +8,9 @@ function App() {
   return (
     <div>
       <BrowserRouter>
-        <Home />
         <Switch>
-          {/* <Route exact path="/home" component={Home} /> */}
-          <Route path="/filmes" component={Films} />
+          <Route exact path="/home" component={Home} />
+          <Route path="/films" component={Films} />
         </Switch>
       </BrowserRouter>
     </div>

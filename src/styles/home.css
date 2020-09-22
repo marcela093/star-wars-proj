@@ -4,28 +4,40 @@ body {
   background-image: url("../assets/star-wars-backgrounds-25.jpg");
   background-size: cover;
   color: white;
+  background-position: center;
+}
+
+.home__container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .home {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 28vh;
+  height: 30vh;
 }
 
 .home__logo {
   height: 20vh;
 }
 
+.home__logo-link:hover {
+  border: none;
+}
+
 .home__nav {
   display: flex;
   justify-content: space-evenly;
+  list-style: none;
 }
 
 li > a {
   font-family: "Montserrat Alternates", sans-serif;
   color: #e6cc7f;
-  list-style: none;
   font-size: 1.5rem;
   text-decoration: none;
 }

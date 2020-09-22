@@ -1,4 +1,33 @@
+.films__content-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 80%;
+}
+
+.films__container {
+  display: flex;
+  justify-content: center;
+}
+
 .films {
+  width: 50%;
+  color: black;
+  background-color: white;
+  margin-bottom: 10px;
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  margin: 40px;
+}
+
+.films:hover {
+  /* transform: scale(1); */
+  border: 0.2rem solid #e6cc7f;
+  box-shadow: 0 0 10px #ffffff;
+}
+
+img {
+  height: 40vh;
 }

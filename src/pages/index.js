@@ -1,28 +1,29 @@
 import React from "react";
 import "../styles/home.css";
-import Films from "./Films";
 import Logo from "../assets/star-wars-logo.png";
 import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
-    <div>
+    <div className="home__container">
       <div className="home">
-        <img className="home__logo" src={Logo} />
+        <Link to="/home" className="home__logo-link">
+          <img className="home__logo" src={Logo} />
+        </Link>
       </div>
-      <div className="home__container">
+      <div>
         <ul className="home__nav">
           <li>
-            <Link to="/filmes">Filmes</Link>
+            <Link to="/films">Films</Link>
           </li>
           <li>
-            <Link to="#">Personagens</Link>
+            <Link to="/characters">Characters</Link>
           </li>
           <li>
-            <Link to="#">Planetas</Link>
+            <Link to="/planets">Planets</Link>
           </li>
           <li>
-            <Link to="#">Naves</Link>
+            <Link to="/starships">Starships</Link>
           </li>
         </ul>
       </div>
