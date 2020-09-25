@@ -1,0 +1,30 @@
+:root {
+  --display: flex;
+  --justify: center;
+}
+
+.footer__container {
+  display: var(--display);
+  justify-content: var(--justify);
+  flex-direction: column;
+  align-items: center;
+  color: #e6cc7f;
+  height: 20vh;
+}
+
+.footer__content {
+  display: var(--display);
+  justify-content: var(--justify);
+  flex-direction: row;
+  align-items: center;
+}
+
+.social {
+  color: #e6cc7f;
+  text-decoration: none;
+  margin: 5px;
+}
+
+.social:hover {
+  border: none;
+}

@@ -12,7 +12,7 @@ const Nav = () => {
 
       <ul className="nav__content">
         <li>
-          <Link to="/films">Films</Link>
+          <Link to="/movies">Movies</Link>
         </li>
         <li>
           <Link to="/characters">Characters</Link>

@@ -1,8 +1,8 @@
-.films__content-box {
+.films__box {
+  width: 80%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
-  width: 80%;
+  justify-content: center;
 }
 
 .films__container {
@@ -10,24 +10,51 @@
   justify-content: center;
 }
 
-.films {
-  width: 50%;
-  color: black;
-  background-color: white;
-  margin-bottom: 10px;
+.films__card {
+  width: 25%;
+  /* padding: 30px; */
+
+  margin-bottom: 20px;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   margin: 40px;
-}
-
-.films:hover {
-  /* transform: scale(1); */
-  border: 0.2rem solid #e6cc7f;
+  border-radius: 10px;
+  border: 0.5px solid #e6cc7f;
   box-shadow: 0 0 10px #ffffff;
 }
 
+.films__image {
+  display: flex;
+  justify-content: center;
+}
+
+/* .films__card:hover {
+  transform: scale(1.1);
+  border: 0.5px solid #e6cc7f;
+  box-shadow: 0 0 10px #ffffff;
+} */
+
 img {
   height: 40vh;
+}
+
+.MuiButton-label {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.films__close-button {
+  display: flex;
+}
+
+.films__info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  flex-direction: column;
+  text-align: justify;
 }
