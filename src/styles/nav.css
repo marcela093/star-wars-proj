@@ -19,3 +19,24 @@
 .nav__logo-link:hover {
   border: none;
 }
+
+/* Media Queries */
+
+@media (min-width: 768px) {
+  .nav__logo {
+    height: 5vh;
+  }
+  .nav__content {
+    width: 65%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .nav__logo {
+    height: 10vh;
+  }
+  .nav__content {
+    width: 50%;
+    justify-content: space-between;
+  }
+}

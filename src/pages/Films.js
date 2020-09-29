@@ -7,29 +7,25 @@ import I from "../assets/I.jpg";
 import II from "../assets/II.jpg";
 import III from "../assets/III.jpg";
 import Nav from "../components/Nav";
-// import MoviesPoster from "../components/MoviesPoster";
-import format from "date-fns/format";
+
+const moviesImages = [
+  { id: 4, img: IV },
+  { id: 5, img: V },
+  { id: 6, img: VI },
+  { id: 1, img: I },
+  { id: 2, img: II },
+  { id: 3, img: III },
+];
 
 const Films = () => {
-  const [items, setItems] = useState([]);
-  const [open, setOpen] = useState(false);
-  const [modalId, setOpenModalId] = useState(null);
-
-  const handleModalOpen = (modalId) => {
-    setOpen(true);
-    // setOpenModalId(modalId);
-  };
-
-  const handleModalClose = () => {
-    setOpen(false);
-  };
+  const [movies, setMovies] = useState([]);
 
   useEffect(() => {
     fetch("https://swapi.dev/api/films/")
       .then((res) => res.json())
       .then(
         (data) => {
-          setItems(data.results);
+          setMovies(data.results);
         },
         (error) => {
           return console.log("deu ruim", error);
@@ -37,21 +33,12 @@ const Films = () => {
       );
   }, []);
 
-  const images = [
-    { id: 4, img: IV },
-    { id: 5, img: V },
-    { id: 6, img: VI },
-    { id: 1, img: I },
-    { id: 2, img: II },
-    { id: 3, img: III },
-  ];
-
   const getImages = () => {
-    items.forEach((item) => {
-      images.forEach((image) => {
-        if (item.episode_id === image.id) {
-          item.image = image.img;
-          item.image_id = image.id;
+    movies.forEach((movie) => {
+      moviesImages.forEach((image) => {
+        if (movie.episode_id === image.id) {
+          movie.image = image.img;
+          movie.image_id = image.id;
         }
       });
     });
@@ -59,49 +46,23 @@ const Films = () => {
 
   getImages();
 
-  // const result = (id) => images.find((position) => position.id === id);
-  // console.log(result);
-
-  // items.forEach((item) => {
-  //   item.image = images.img;
-  //   item.image_id = images.id;
-  //   items.push(item);
-  //   console.log(items);
-  // });
-
   return (
     <div>
       <Nav />
       <div className="films__container">
-        <div className="films__box">
-          {items.map((item) => {
+        <div className="films">
+          {movies.map((movie) => {
             return (
               <div className="films__card">
-                <div className="films__image">
-                  <img src={item.image} />
+                <div className="films__image-box">
+                  <img src={movie.image} className="films__image" />
                 </div>
 
                 <div className="films__info">
-                  <h4>{item.title}</h4>
-                  <p>{item.release_date}</p>
-                  <p>{item.opening_crawl}</p>
+                  <h4>{movie.title}</h4>
+                  <p>{`Release Date: ${movie.release_date}`}</p>
+                  <p>{movie.opening_crawl}</p>
                 </div>
-
-                {/* <Button onClick={handleModalOpen}>
-                  <img src={item.image} />
-                </Button>
-
-                <Dialog onClose={handleModalClose} open={open}>
-                  <div className="films__close-button">
-                    <DialogTitle>{item.title}</DialogTitle>
-                    <IconButton aria-label="close" onClick={handleModalClose}>
-                      <CloseIcon />
-                    </IconButton>
-                  </div>
-                  <MuiDialogContent dividers>
-                    <Typography gutterBottom>{item.title}</Typography>
-                  </MuiDialogContent>
-                </Dialog> */}
               </div>
             );
           })}

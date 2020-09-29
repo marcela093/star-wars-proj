@@ -31,8 +31,12 @@ body {
 
 .home__nav {
   display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
+  align-items: center;
   list-style: none;
+  height: 30vh;
+  padding: 0;
 }
 
 li > a {
@@ -45,4 +49,13 @@ li > a {
 a:hover {
   cursor: pointer;
   border-bottom: 1px solid #e6cc7f;
+}
+
+/* Media Queries */
+
+@media (min-width: 1280px) {
+  .home__nav {
+    flex-direction: row;
+    height: 0;
+  }
 }
