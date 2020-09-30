@@ -12,10 +12,10 @@ const Nav = () => {
 
       <ul className="nav__content">
         <li>
-          <Link to="/movies">Movies</Link>
+          <Link to="/characters">Characters</Link>
         </li>
         <li>
-          <Link to="/characters">Characters</Link>
+          <Link to="/movies">Movies</Link>
         </li>
         <li>
           <Link to="/planets">Planets</Link>

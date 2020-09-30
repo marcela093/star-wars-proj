@@ -59,27 +59,17 @@ const Planets = () => {
       <div className="planets__container">
         <table className="table">
           <tr className="table__tr">
-            {/* <div className="table__th"> */}
-
             <th>
               <img src={Planet} className="icon" />
-              Name
             </th>
-            {/* </div> */}
-            {/* <div className="table__th"> */}
 
             <th>
               <img src={Climate} className="icon" />
-              Climate
             </th>
-            {/* </div> */}
-            {/* <div className="table__th"> */}
 
             <th>
               <img src={People} className="icon" />
-              Population
             </th>
-            {/* </div> */}
           </tr>
 
           {planets.map((planet) => (
