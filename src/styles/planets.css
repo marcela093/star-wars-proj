@@ -1,0 +1,52 @@
+.remove-button {
+  display: none;
+}
+
+.planets__container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.table {
+  background: rgba(22, 22, 22, 0.9);
+  width: 50%;
+  text-align: center;
+  height: 70vh;
+  border-top: 5px solid rgb(245, 245, 245, 0.2);
+  border-bottom: 5px solid rgb(245, 245, 245, 0.2);
+  border-radius: 5px;
+}
+
+.icon {
+  height: 5vh;
+  margin-right: 10px;
+}
+
+.button-img {
+  height: 8vh;
+}
+
+#previous-button,
+#next-button {
+  border: none;
+  margin: 8px;
+  width: 40%;
+  background: rgba(22, 22, 22, 0.902);
+  border-radius: 100%;
+  outline: none;
+}
+
+#previous-button,
+#next-button:hover {
+  cursor: pointer;
+}
+
+.buttons__container {
+  margin-top: 30px;
+}
+
+td {
+  border-bottom: 1px solid rgb(245, 245, 245, 0.2);
+}
