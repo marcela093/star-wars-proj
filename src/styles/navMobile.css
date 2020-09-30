@@ -1,0 +1,17 @@
+.menu {
+  color: #e6cc7f;
+}
+
+.nav-mobile__item {
+  font-size: 1rem;
+}
+
+.MuiMenu-list {
+  background: rgba(22, 22, 22, 0.9);
+}
+
+@media (min-width: 768px) {
+  .nav-mobile__container {
+    display: none;
+  }
+}

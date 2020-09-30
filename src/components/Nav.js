@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "../assets/star-wars-logo.png";
+import NavMobile from "../components/NavMobile";
 import "../styles/nav.css";
 
 const Nav = () => {
@@ -9,7 +10,7 @@ const Nav = () => {
       <Link to="/home" className="nav__logo-link">
         <img className="nav__logo" src={Logo} />
       </Link>
-
+      <NavMobile />
       <ul className="nav__content">
         <li>
           <Link to="/characters">Characters</Link>
