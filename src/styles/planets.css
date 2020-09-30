@@ -14,6 +14,7 @@
 .table {
   background: rgba(22, 22, 22, 0.9);
   text-align: center;
+  width: 90%;
   height: 70vh;
   border-top: 5px solid rgb(245, 245, 245, 0.2);
   border-bottom: 5px solid rgb(245, 245, 245, 0.2);

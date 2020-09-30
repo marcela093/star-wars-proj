@@ -59,7 +59,7 @@ const Films = () => {
                 </div>
 
                 <div className="films__info">
-                  <h4>{movie.title}</h4>
+                  <h4 className="films__title">{movie.title}</h4>
                   <p>{`Release Date: ${movie.release_date}`}</p>
                   <p>{movie.opening_crawl}</p>
                 </div>

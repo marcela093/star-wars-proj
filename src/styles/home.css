@@ -2,9 +2,10 @@
 
 body {
   background-image: url("../assets/star-wars-backgrounds-25.jpg");
-  background-size: cover;
+  /* background-size: cover; */
   color: white;
-  background-position: center;
+  /* background-position: center; */
+  font-family: "Montserrat Alternates", sans-serif;
 }
 
 .home__container {
@@ -40,7 +41,6 @@ body {
 }
 
 li > a {
-  font-family: "Montserrat Alternates", sans-serif;
   color: #e6cc7f;
   font-size: 1.5rem;
   text-decoration: none;

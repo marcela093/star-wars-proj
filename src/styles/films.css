@@ -51,6 +51,10 @@ img {
   text-align: justify;
 }
 
+.films__title {
+  color: #e6cc7f;
+}
+
 /* Media Queries */
 
 @media (min-width: 768px) {
