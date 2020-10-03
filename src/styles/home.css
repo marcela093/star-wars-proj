@@ -2,9 +2,7 @@
 
 body {
   background-image: url("../assets/star-wars-backgrounds-25.jpg");
-  /* background-size: cover; */
   color: white;
-  /* background-position: center; */
   font-family: "Montserrat Alternates", sans-serif;
 }
 
@@ -23,7 +21,7 @@ body {
 }
 
 .home__logo {
-  height: 20vh;
+  height: 15vh;
 }
 
 .home__logo-link:hover {
@@ -42,7 +40,7 @@ body {
 
 li > a {
   color: #e6cc7f;
-  font-size: 1.5rem;
+
   text-decoration: none;
 }
 
@@ -52,6 +50,15 @@ a:hover {
 }
 
 /* Media Queries */
+
+@media (min-width: 768px) {
+  li > a {
+    font-size: 1.5rem;
+  }
+  .home__logo {
+    height: 20vh;
+  }
+}
 
 @media (min-width: 1280px) {
   .home__nav {

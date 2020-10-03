@@ -49,6 +49,7 @@ img {
   width: 90%;
   flex-direction: column;
   text-align: justify;
+  line-height: 1.4;
 }
 
 .films__title {
