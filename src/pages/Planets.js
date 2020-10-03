@@ -29,8 +29,8 @@ const Planets = () => {
             const nextButton = document.getElementById("next-button");
             nextButton.classList.add("remove-button");
           } else {
-            const next = document.getElementById("next-button");
-            next.classList.remove("remove-button");
+            const nextButton = document.getElementById("next-button");
+            nextButton.classList.remove("remove-button");
           }
         },
         (error) => {
@@ -49,9 +49,9 @@ const Planets = () => {
     setPages(previousPage);
   };
 
-  const format = planets.map((planet) => {
-    return planet.population.toLocaleString();
-  });
+  // const format = planets.map((planet) => {
+  //   return planet.population.toLocaleString();
+  // });
 
   return (
     <>
