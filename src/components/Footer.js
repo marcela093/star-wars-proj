@@ -9,7 +9,7 @@ const Footer = () => {
     <div className="footer__container">
       <div className="footer__content">
         <p>Made with</p>
-        <FavoriteBorderIcon />
+        <FavoriteBorderIcon style={{ margin: 5 }} />
         <p>by Marcela Souza</p>
       </div>
       <div className="footer__social">
