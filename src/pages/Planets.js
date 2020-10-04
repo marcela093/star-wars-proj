@@ -6,6 +6,7 @@ import People from "../assets/people.svg";
 import Climate from "../assets/climate.svg";
 import Next from "../assets/next.svg";
 import Previous from "../assets/previous.svg";
+import { paginationButtons } from "../shared/paginationButtons";
 
 const Planets = () => {
   const [planets, setPlanets] = useState([]);
@@ -18,20 +19,7 @@ const Planets = () => {
         (data) => {
           setPlanets(data.results);
 
-          if (data.previous === null) {
-            const previousButton = document.getElementById("previous-button");
-            previousButton.classList.add("remove-button");
-          } else {
-            const previousButton = document.getElementById("previous-button");
-            previousButton.classList.remove("remove-button");
-          }
-          if (data.next === null) {
-            const nextButton = document.getElementById("next-button");
-            nextButton.classList.add("remove-button");
-          } else {
-            const nextButton = document.getElementById("next-button");
-            nextButton.classList.remove("remove-button");
-          }
+          paginationButtons(data);
         },
         (error) => {
           return console.log(error);
@@ -60,15 +48,24 @@ const Planets = () => {
         <table className="table">
           <tr className="table__tr">
             <th>
-              <img src={Planet} className="icon" />
+              <div className="table__title">
+                <img src={Planet} className="icon" />
+                <p>Planets</p>
+              </div>
             </th>
 
             <th>
-              <img src={Climate} className="icon" />
+              <div className="table__title">
+                <img src={Climate} className="icon" />
+                <p>Climate</p>
+              </div>
             </th>
 
             <th>
-              <img src={People} className="icon" />
+              <div className="table__title">
+                <img src={People} className="icon" />
+                <p>Population</p>
+              </div>
             </th>
           </tr>
 

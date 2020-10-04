@@ -22,8 +22,15 @@
   border-radius: 5px;
 }
 
+.table__title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
 .icon {
-  height: 5vh;
+  height: 4vh;
   margin-right: 10px;
 }
 
@@ -72,16 +79,10 @@ th {
 /* Media Queries */
 
 @media (min-width: 768px) {
-  .icon {
-    height: 3vh;
-  }
   .table {
     width: 70%;
   }
-}
-
-@media (min-width: 1280px) {
-  .icon {
-    height: 5vh;
+  .table__title {
+    flex-direction: row;
   }
 }
