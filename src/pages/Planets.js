@@ -6,6 +6,7 @@ import People from "../assets/people.svg";
 import Climate from "../assets/climate.svg";
 import Next from "../assets/next.svg";
 import Previous from "../assets/previous.svg";
+// import NavigationButton from "../components/Button";
 import { paginationButtons } from "../shared/paginationButtons";
 
 const Planets = () => {
@@ -37,54 +38,66 @@ const Planets = () => {
     setPages(previousPage);
   };
 
-  // const format = planets.map((planet) => {
-  //   return planet.population.toLocaleString();
-  // });
-
   return (
     <>
       <Nav />
       <div className="planets__container">
         <table className="table">
-          <tr className="table__tr">
-            <th>
-              <div className="table__title">
-                <img src={Planet} className="icon" />
-                <p>Planets</p>
-              </div>
-            </th>
+          <thead>
+            <tr className="table__tr">
+              <th>
+                <div className="table__title">
+                  <img
+                    src={Planet}
+                    className="icon"
+                    alt="drawing of a planet"
+                  />
+                  <p>Planets</p>
+                </div>
+              </th>
 
-            <th>
-              <div className="table__title">
-                <img src={Climate} className="icon" />
-                <p>Climate</p>
-              </div>
-            </th>
+              <th>
+                <div className="table__title">
+                  <img
+                    src={Climate}
+                    className="icon"
+                    alt="drawing of a thermometer"
+                  />
+                  <p>Climate</p>
+                </div>
+              </th>
 
-            <th>
-              <div className="table__title">
-                <img src={People} className="icon" />
-                <p>Population</p>
-              </div>
-            </th>
-          </tr>
+              <th>
+                <div className="table__title">
+                  <img
+                    src={People}
+                    className="icon"
+                    alt="drawing of two people"
+                  />
+                  <p>Population</p>
+                </div>
+              </th>
+            </tr>
+          </thead>
 
           {planets.map((planet) => (
-            <tr className="table__td">
+            // <tbody>
+            <tr className="table__td" key={planet.id}>
               <td>{planet.name}</td>
 
               <td>{planet.climate}</td>
 
               <td>{planet.population}</td>
             </tr>
+            // </tbody>
           ))}
         </table>
         <div className="buttons__container">
           <button id="previous-button" onClick={handlePreviousPage}>
-            <img src={Previous} className="button-img" />
+            <img src={Previous} className="button-img" alt="left arrow" />
           </button>
           <button id="next-button" onClick={handleNextPage}>
-            <img src={Next} className="button-img" />
+            <img src={Next} className="button-img" alt="right arrow" />
           </button>
         </div>
       </div>

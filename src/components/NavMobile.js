@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "@material-ui/core/Button";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -7,7 +7,7 @@ import "../styles/navMobile.css";
 import MenuIcon from "@material-ui/icons/Menu";
 
 const NavMobile = () => {
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [anchorEl, setAnchorEl] = useState(null);
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -37,7 +37,7 @@ const NavMobile = () => {
       >
         <MenuItem onClick={handleClose}>
           <Link to="/characters" className="nav-mobile__item">
-            <p>Characters</p>
+            Characters
           </Link>
         </MenuItem>
         <MenuItem onClick={handleClose}>

@@ -8,7 +8,7 @@ const Home = () => {
     <div className="home__container">
       <div className="home">
         <Link to="/home" className="home__logo-link">
-          <img className="home__logo" src={Logo} />
+          <img className="home__logo" src={Logo} alt="star wars logo" />
         </Link>
       </div>
       <div>

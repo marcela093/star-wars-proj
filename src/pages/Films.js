@@ -55,7 +55,11 @@ const Films = () => {
             return (
               <div className="films__card">
                 <div className="films__image-box">
-                  <img src={movie.image} className="films__image" />
+                  <img
+                    src={movie.image}
+                    className="films__image"
+                    alt="star wars poster movie"
+                  />
                 </div>
 
                 <div className="films__info">
