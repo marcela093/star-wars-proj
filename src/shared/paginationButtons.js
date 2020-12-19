@@ -1,4 +1,6 @@
 import React from 'react'
+import Next from '../assets/next.svg'
+import Previous from '../assets/previous.svg'
 
 export const paginationButtons = ({ ...data }) => {
   if (data.previous === null) {
@@ -17,22 +19,15 @@ export const paginationButtons = ({ ...data }) => {
   }
 }
 
-export const PaginationButtons = ({
-  previousPage,
-  nextPage,
-  previousIcon,
-  nextIcon,
-}) => {
+export const PaginationButtons = ({ previousPage, nextPage }) => {
   return (
     <div className="buttons__container">
       <button id="previous-button" onClick={previousPage}>
-        <img src={previousIcon} className="button-img" alt="left arrow" />
+        <img src={Previous} className="button-img" alt="left arrow" />
       </button>
       <button id="next-button" onClick={nextPage}>
-        <img src={nextIcon} className="button-img" alt="right arrow" />
+        <img src={Next} className="button-img" alt="right arrow" />
       </button>
     </div>
   )
 }
-
-// export default PaginationButtons
