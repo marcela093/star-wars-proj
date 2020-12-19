@@ -8,7 +8,10 @@ import Climate from '../assets/climate.svg'
 import Next from '../assets/next.svg'
 import Previous from '../assets/previous.svg'
 // import NavigationButton from "../components/Button";
-import { paginationButtons } from '../shared/paginationButtons'
+import {
+  paginationButtons,
+  PaginationButtons,
+} from '../shared/paginationButtons'
 
 const Planets = () => {
   const [planets, setPlanets] = useState([])
@@ -120,14 +123,12 @@ const Planets = () => {
             </tr>
           ))}
         </table>
-        <div className="buttons__container">
-          <button id="previous-button" onClick={handlePreviousPage}>
-            <img src={Previous} className="button-img" alt="left arrow" />
-          </button>
-          <button id="next-button" onClick={handleNextPage}>
-            <img src={Next} className="button-img" alt="right arrow" />
-          </button>
-        </div>
+        <PaginationButtons
+          nextIcon={Next}
+          previousIcon={Previous}
+          nextPage={handleNextPage}
+          previousPage={handlePreviousPage}
+        />
       </div>
     </>
   )
