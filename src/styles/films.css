@@ -21,6 +21,7 @@
   border: 0.5px solid #e6cc7f;
   box-shadow: 0 0 10px #ffffff;
   background: rgba(22, 22, 22, 0.9);
+  width: 80%;
 }
 
 .films__image-box {
