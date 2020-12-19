@@ -91,7 +91,7 @@ const Planets = () => {
                   <Skeleton
                     style={{ backgroundColor: '#2d2d2d', width: '100%' }}
                     variant="rect"
-                    height={350}
+                    height={400}
                   />
                 </td>
               )}
@@ -102,7 +102,7 @@ const Planets = () => {
                   <Skeleton
                     style={{ backgroundColor: '#2d2d2d', width: '100%' }}
                     variant="rect"
-                    height={350}
+                    height={400}
                   />
                 </td>
               )}
@@ -113,31 +113,12 @@ const Planets = () => {
                   <Skeleton
                     style={{ backgroundColor: '#2d2d2d', width: '100%' }}
                     variant="rect"
-                    height={350}
+                    height={400}
                   />
                 </td>
               )}
             </tr>
           ))}
-
-          {/* <Skeleton
-                style={{ backgroundColor: '#2d2d2d' }}
-                variant="rect"
-                height={400}
-              />
-
-              <Skeleton
-                style={{ backgroundColor: '#2d2d2d' }}
-                variant="rect"
-                height={400}
-              /> */}
-          {/* <tr className="table__td" key={planet.id}>
-                <td>{planet.name}</td>
-
-                <td>{planet.climate}</td>
-
-                <td>{planet.population}</td>
-              </tr> */}
         </table>
         <div className="buttons__container">
           <button id="previous-button" onClick={handlePreviousPage}>
