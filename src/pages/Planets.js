@@ -1,42 +1,45 @@
-import React, { useEffect, useState } from "react";
-import Nav from "../components/Nav";
-import "../styles/planets.css";
-import Planet from "../assets/planet.svg";
-import People from "../assets/people.svg";
-import Climate from "../assets/climate.svg";
-import Next from "../assets/next.svg";
-import Previous from "../assets/previous.svg";
+import React, { useEffect, useState } from 'react'
+import { Skeleton } from '@material-ui/lab'
+import Nav from '../components/Nav'
+import '../styles/planets.css'
+import Planet from '../assets/planet.svg'
+import People from '../assets/people.svg'
+import Climate from '../assets/climate.svg'
+import Next from '../assets/next.svg'
+import Previous from '../assets/previous.svg'
 // import NavigationButton from "../components/Button";
-import { paginationButtons } from "../shared/paginationButtons";
+import { paginationButtons } from '../shared/paginationButtons'
 
 const Planets = () => {
-  const [planets, setPlanets] = useState([]);
-  const [pages, setPages] = useState(1);
+  const [planets, setPlanets] = useState([])
+  const [pages, setPages] = useState(1)
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
+    setLoading(true)
     fetch(`https://swapi.dev/api/planets/?page=${pages}`)
       .then((res) => res.json())
       .then(
         (data) => {
-          setPlanets(data.results);
-
-          paginationButtons(data);
+          setPlanets(data.results)
+          paginationButtons(data)
+          setLoading(false)
         },
         (error) => {
-          return console.log(error);
+          return console.log(error)
         }
-      );
-  }, [pages]);
+      )
+  }, [pages])
 
   const handleNextPage = () => {
-    const nextPage = pages + 1;
-    setPages(nextPage);
-  };
+    const nextPage = pages + 1
+    setPages(nextPage)
+  }
 
   const handlePreviousPage = () => {
-    const previousPage = pages - 1;
-    setPages(previousPage);
-  };
+    const previousPage = pages - 1
+    setPages(previousPage)
+  }
 
   return (
     <>
@@ -79,18 +82,62 @@ const Planets = () => {
               </th>
             </tr>
           </thead>
-
-          {planets.map((planet) => (
-            // <tbody>
-            <tr className="table__td" key={planet.id}>
-              <td>{planet.name}</td>
-
-              <td>{planet.climate}</td>
-
-              <td>{planet.population}</td>
+          {(loading ? Array.from(new Array(1)) : planets).map((planet) => (
+            <tr className="table__td">
+              {planet ? (
+                <td>{planet.name}</td>
+              ) : (
+                <td>
+                  <Skeleton
+                    style={{ backgroundColor: '#2d2d2d', width: '100%' }}
+                    variant="rect"
+                    height={350}
+                  />
+                </td>
+              )}
+              {planet ? (
+                <td>{planet.climate}</td>
+              ) : (
+                <td>
+                  <Skeleton
+                    style={{ backgroundColor: '#2d2d2d', width: '100%' }}
+                    variant="rect"
+                    height={350}
+                  />
+                </td>
+              )}
+              {planet ? (
+                <td>{planet.population}</td>
+              ) : (
+                <td>
+                  <Skeleton
+                    style={{ backgroundColor: '#2d2d2d', width: '100%' }}
+                    variant="rect"
+                    height={350}
+                  />
+                </td>
+              )}
             </tr>
-            // </tbody>
           ))}
+
+          {/* <Skeleton
+                style={{ backgroundColor: '#2d2d2d' }}
+                variant="rect"
+                height={400}
+              />
+
+              <Skeleton
+                style={{ backgroundColor: '#2d2d2d' }}
+                variant="rect"
+                height={400}
+              /> */}
+          {/* <tr className="table__td" key={planet.id}>
+                <td>{planet.name}</td>
+
+                <td>{planet.climate}</td>
+
+                <td>{planet.population}</td>
+              </tr> */}
         </table>
         <div className="buttons__container">
           <button id="previous-button" onClick={handlePreviousPage}>
@@ -102,7 +149,7 @@ const Planets = () => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Planets;
+export default Planets
