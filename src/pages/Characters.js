@@ -1,55 +1,74 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import Nav from "../components/Nav";
-import { paginationButtons } from "../shared/paginationButtons";
+import React, { useEffect, useState } from 'react'
+import { Skeleton } from '@material-ui/lab'
+import { Link } from 'react-router-dom'
 
-const Characters = () => {
-  const [characters, setCharacters] = useState([]);
-  const [pages, setPages] = useState(1);
+// components
+import Nav from '../components/Nav'
+import { getPaginationButtons, PaginationButtons } from '../shared/paginationButtons'
+
+// styles
+import '../styles/characters.css'
+
+// images
+import Luke from '../assets/luke.jpg'
+
+function Characters() {
+  const [characters, setCharacters] = useState([])
+  const [loading, setLoading] = useState(false)
+  const [pages, setPages] = useState(1)
+
+  const getCharacters = async () => {
+    setLoading(true)
+
+    try {
+      const request = await fetch(`https://swapi.dev/api/people/?page=${pages}`)
+      const data = await request.json()
+      setCharacters(data.results)
+      getPaginationButtons(data)
+    } catch (error) {
+      console.log(error)
+    } finally {
+      setLoading(false)
+    }
+  }
 
   useEffect(() => {
-    fetch(`https://swapi.dev/api/people/?page=${pages}`)
-      .then((res) => res.json())
-      .then(
-        (data) => {
-          setCharacters(data.results);
-        },
-        (error) => {
-          console.log(error);
-        }
-      );
-  }, [pages]);
+    getCharacters()
+  }, [pages])
 
-  const handleNext = () => {
-    const nextPage = pages + 1;
-    setPages(nextPage);
-  };
+  const handleNextPage = () => {
+    const nextPage = pages + 1
+    setPages(nextPage)
+  }
 
-  const handlePrevious = () => {
-    const previousPage = pages - 1;
-    setPages(previousPage);
-  };
+  const handlePreviousPage = () => {
+    const previousPage = pages - 1
+    setPages(previousPage)
+  }
 
-  const id = characters.find((character) => character.name);
-  console.log(id);
+  const name = characters.find((character) => character.name)
+  console.log(name)
+
+  // const pathname = location.pathname;
+  // console.log(pathname);
+
   return (
     <div>
       <Nav />
-      {characters.map((character) => (
-        <div>
-          <p>{character.name}</p>
+      <div className="character__container">
+        {characters.map((character) => (
+          <div className="character__card">
+            <p>{character.name}</p>
 
-          <Link to={`/character-detail/${id}`}>
-            <button>Ver Mais</button>
-          </Link>
-        </div>
-      ))}
-      <div className="buttons__container">
-        <button onClick={handlePrevious}>Previous</button>
-        <button onClick={handleNext}>Next</button>
+            <Link to={`/character-detail/${character.name}`}>
+              <button>Ver Mais</button>
+            </Link>
+          </div>
+        ))}
       </div>
+      <PaginationButtons previousPage={handlePreviousPage} nextPage={handleNextPage} />
     </div>
-  );
-};
+  )
+}
 
-export default Characters;
+export default Characters

@@ -1,8 +1,14 @@
 import React from 'react'
+
+// icons
 import Next from '../assets/next.svg'
 import Previous from '../assets/previous.svg'
 
-export const paginationButtons = ({ ...data }) => {
+// styles
+import { Button } from './styles'
+import '../styles/planets.css'
+
+export const getPaginationButtons = ({ ...data }) => {
   if (data.previous === null) {
     const previousButton = document.getElementById('previous-button')
     previousButton.classList.add('remove-button')
@@ -21,13 +27,13 @@ export const paginationButtons = ({ ...data }) => {
 
 export const PaginationButtons = ({ previousPage, nextPage }) => {
   return (
-    <div className="buttons__container">
-      <button id="previous-button" onClick={previousPage}>
-        <img src={Previous} className="button-img" alt="left arrow" />
-      </button>
-      <button id="next-button" onClick={nextPage}>
-        <img src={Next} className="button-img" alt="right arrow" />
-      </button>
+    <div style={{ marginTop: '1.25rem' }}>
+      <Button id="previous-button" onClick={previousPage}>
+        <img src={Previous} style={{ height: '8vh' }} alt="left arrow" />
+      </Button>
+      <Button id="next-button" onClick={nextPage}>
+        <img src={Next} style={{ height: '8vh' }} alt="right arrow" />
+      </Button>
     </div>
   )
 }

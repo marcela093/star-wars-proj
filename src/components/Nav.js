@@ -1,8 +1,8 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import Logo from "../assets/star-wars-logo.png";
-import NavMobile from "../components/NavMobile";
-import "../styles/nav.css";
+import React from 'react'
+import { Link } from 'react-router-dom'
+import Logo from '../assets/star-wars-logo.png'
+import NavMobile from '../components/NavMobile'
+import '../styles/nav.css'
 
 const Nav = () => {
   return (
@@ -26,7 +26,7 @@ const Nav = () => {
         </li>
       </ul>
     </div>
-  );
-};
+  )
+}
 
-export default Nav;
+export default Nav

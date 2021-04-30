@@ -1,0 +1,14 @@
+.character-detail__card {
+  background: rgba(22, 22, 22, 0.902);
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.character-detail__container {
+  display: flex;
+  justify-content: center;
+}

@@ -1,81 +1,17 @@
-.films__container {
-  display: flex;
-  justify-content: center;
-}
-
-.films {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.films__card {
-  margin-bottom: 20px;
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 40px;
-  border-radius: 10px;
-  border: 0.5px solid #e6cc7f;
-  box-shadow: 0 0 10px #ffffff;
-  background: rgba(22, 22, 22, 0.9);
-  width: 80%;
-}
-
-.films__image-box {
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
-}
-
 img {
   height: 40vh;
-}
-
-.MuiButton-label {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.films__close-button {
-  display: flex;
-}
-
-.films__info {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 90%;
-  flex-direction: column;
-  text-align: justify;
-  line-height: 1.4;
-}
-
-.films__title {
-  color: #e6cc7f;
 }
 
 /* Media Queries */
 
 @media (min-width: 768px) {
-  .films__card {
-    width: 39%;
-  }
   img {
     height: 30vh;
   }
 }
 
 @media (min-width: 1280px) {
-  .films__card {
-    width: 25%;
-  }
   img {
     height: 40vh;
-  }
-  .films {
-    width: 80%;
   }
 }

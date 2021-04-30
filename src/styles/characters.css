@@ -1,0 +1,16 @@
+.character__card {
+  background: rgba(22, 22, 22, 0.902);
+  width: 60%;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.character__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
